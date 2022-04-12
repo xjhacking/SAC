@@ -35,10 +35,11 @@ var getScriptPromisify = (src) => {
     ////////////////////////////////////////////////////////////
 
 
-set myDataSource (dataBinding) { this._myDataSource = dataBinding
-}
-this.render()
+set myDataSource (dataBinding) { 
+  this._myDataSource = dataBinding
 
+this.render()
+}
 
 
 
@@ -50,13 +51,18 @@ this.render()
      ///Second comment: Place the second part of the script here//
     /////////////////////////////////////////////////////////////
 
-if (!this._myDataSource || this._myDataSource.state !== 'success') { return
+if (!this._myDataSource || this._myDataSource.state !== 'success') { 
+  return
 }
-const dimension = this._myDataSource.metadata.feeds.dimensions.values[0]
-const measure = this._myDataSource.metadata.feeds.measures.values[0] const data = this._myDataSource.data.map(data => {
+const dimension = 
+this._myDataSource.metadata.feeds.dimensions.values[0]
+const measure = this._myDataSource.metadata.feeds.measures.values[0] 
+const data = this._myDataSource.data.map(data => {
 return {
-name: data[dimension].label, value: data[measure].raw
-}})
+name: data[dimension].label, 
+value: data[measure].raw
+}
+})
 
 
       const myChart = echarts.init(this._root, 'wight')
@@ -73,11 +79,14 @@ const option = {
         legend: {
           top: '2%',
           left: 'center'
-}, series: [
+}, 
+series: [
 {
 name: '',
 type: 'pie',
-radius: ['40%', '65%'], avoidLabelOverlap: false, itemStyle: {
+radius: ['40%', '65%'], 
+avoidLabelOverlap: false, 
+itemStyle: {
               borderRadius: 10,
               borderColor: '#fff',
               borderWidth: 4
@@ -90,14 +99,17 @@ show: false,
                 show: true,
                 fontSize: '25',
                 fontWeight: 'bold'
-} },
+} 
+},
             labelLine: {
               show: false
 },
 data
-} ]
+} 
+]
 }
-myChart.setOption(option) }
+myChart.setOption(option) 
+}
 }
 
 
